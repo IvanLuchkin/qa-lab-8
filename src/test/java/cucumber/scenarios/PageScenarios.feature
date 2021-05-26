@@ -13,7 +13,7 @@ Feature: Test Page Endpoint
       | 2016-10-05T08:20:10+05:30[Asia/Kolkata]     | test | huh |
     When I try to create new page
     Then I receive status code 201
-    And I receive page with id 69
+    And I receive page with id 70
 
   Scenario: REST API should modify existing page
     Given page with next data:
