@@ -21,5 +21,4 @@ jobs:
         with:
           java-version: 15
       - name: 'Test with Maven'
-        with:
-          run:  mvn failsafe:integration-test
+        run:  mvn failsafe:integration-test
