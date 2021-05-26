@@ -1,0 +1,25 @@
+name: Run BDD Tests
+
+on:
+  push:
+    tags:
+      - v*
+  pull_request:
+    branches: [ master ]
+  
+  workflow_dispatch:
+
+jobs:
+  build-jar-job:
+    name: 'Test with Cucumber'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Set up JDK 15'
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 15
+      - name: 'Test with Maven'
+        with:
+          run:  mvn failsafe:integration-test
